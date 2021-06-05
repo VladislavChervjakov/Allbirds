@@ -19,6 +19,7 @@
     "gulp-file-include": "^2.3.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-image": "^6.2.1",
+    "gulp-minify": "^3.1.0",
     "gulp-sass": "^4.1.0",
     "gulp-shell": "^0.8.0",
     "node-normalize-scss": "^8.1.2"

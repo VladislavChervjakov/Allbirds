@@ -8,6 +8,7 @@ const autoprefixer = require( 'gulp-autoprefixer' )
 const concat = require( 'gulp-concat' )
 const image = require( 'gulp-image' )
 const shell = require( 'gulp-shell' )
+const minify = require( 'gulp-minify' )
 
 function start() {
     return src( '*.js', {read: false} )
@@ -15,8 +16,6 @@ function start() {
       'mkdir -p  src src/img src/scss src/js'
     ] ) )
 }
-
-
 
 function html() {
     return src( 'src/**.html' )
@@ -38,6 +37,17 @@ function scss() {
         .pipe( dest('dist/css') )
 }
 
+function js() {
+    return src( 'src/js/*.js' )
+        .pipe( minify( {
+            ext: {
+                min: '.min.js'
+            },
+            ignoreFiles: ['-min.js']
+        } ) )
+        .pipe( dest( 'dist/js' ) )
+}
+
 function img() {
     return src( 'src/img/*' )
             .pipe( image() )
@@ -55,11 +65,12 @@ function serve() {
 
     watch( 'src/**.html', series( html ) ).on( 'change', sync.reload )
     watch( 'src/scss/**.scss', series( scss ) ).on( 'change', sync.reload )
+    watch( 'src/js/**.js', series( js ) ).on( ['add', 'change'], sync.reload )
     watch( 'src/img/*', series( img ) ).on( ['add', 'change'], sync.reload )
 }
 
 
 exports.start = start
-exports.build = series(  clear, scss, html, img )
-exports.serve = series ( clear, scss, html, img, serve )
+exports.build = series(  clear, scss, js, html, img )
+exports.serve = series ( clear, scss, js, html, img, serve )
 exports.clear = clear

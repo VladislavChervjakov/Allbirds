@@ -3,6 +3,7 @@ $roboto: 'Roboto', sans-serif;
 body {
     padding: 0;
     margin: 0;
+    font-family: $roboto;
 }
 
 a {
@@ -21,7 +22,6 @@ a {
 
     // menu styles
     &__top_menu {
-        font-family: $roboto;
         font-size: 12px;
         display: flex;
         justify-content: space-between;
@@ -83,7 +83,6 @@ a {
 
     &__banner_main_text {
         font-size: 48px;
-        font-family: $roboto;
         line-height: 63px;
         margin-bottom: 11px;
     }
@@ -119,7 +118,6 @@ a {
 
 // our favorites
 .our-favorites {
-    font-family: $roboto;
 
     &__title {
         text-align: center;
@@ -147,5 +145,86 @@ a {
         &:last-child {
             margin-right: 0;
         }
+    }
+
+
+    &__tabs_content {
+        margin-top: 34px;
+    }
+
+    &__tabs_content_item {
+        display: none;
+    }
+
+    &__tabs_content_card {
+        margin-right: 24px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__tabs_content_card_image {
+        width: 396px;
+        height: 396px;
+        position: relative;
+
+        &:hover {
+            .our-favorites__tabs_content_card_image_btns {
+                display: block;
+            }
+        }
+    }
+
+    &__tabs_content_card_image_btns {
+        display: none;
+        position: absolute;
+        max-width: 276px;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__tabs_content_card_title {
+        font-size: 22px;
+        padding-top: 17px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #D3D4D5;
+    }
+
+    &__tabs_content_card_sub_text_block {
+        display: flex;
+        align-items: center;
+        padding-top: 16px;
+    }
+
+    &__tabs_content_card_sub_text_icon {
+        margin-right: 12px;
+    }
+
+    &__tabs_content_card_button {
+        display: block;
+        text-align: center;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        margin-bottom: 12px;
+        font-size: 14px;
+        letter-spacing: 2px;
+        line-height: 16px;
+        color: #000;
+        background-color: #fff;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__tabs_navigation_item--active {
+        border-bottom: 2px solid #000;
+    }
+
+    &__tabs_content_item--active {
+        display: flex;
     }
 }
