@@ -8,6 +8,7 @@ body {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 // container
@@ -226,5 +227,50 @@ a {
 
     &__tabs_content_item--active {
         display: flex;
+    }
+}
+
+// banner image
+.banner {
+    &__image {
+        width: 100%;
+        margin-top: 142px;
+        margin-bottom: 47px;
+    }
+}
+
+// colorful by nature
+.colorful-by-nature {
+    &__wrapper {
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    &__sub_text {
+        line-height: 24px;
+        margin-bottom: 30px;
+    }
+
+    &__btns {
+        justify-content: center;
+        display: flex;
+    }
+
+    &__button {
+        max-width: 180px;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background: #212A2F;
+        color: #fff;
+        margin-right: 24px;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
