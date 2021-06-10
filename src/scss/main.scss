@@ -294,9 +294,13 @@ a {
 
     }
 
-    &__slider_slide_text {
+    &__slide_text {
         font-size: 22px;
         padding-top: 17px;
+    }
+
+    &__slide_sub_text {
+        margin-top: 6;
     }
 
     &__arrow {
